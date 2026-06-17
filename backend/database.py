@@ -13,7 +13,7 @@ except OSError:
 LOCAL_DB_PATH = os.path.join(DB_DIR, "finance.db")
 
 # Read Turso credentials. Fallback to local SQLite file url if not set.
-TURSO_DB_URL = os.environ.get("TURSO_DB_URL", "")
+TURSO_DB_URL = os.environ.get("TURSO_DB_URL") or os.environ.get("TURSO_DATABASE_URL") or ""
 TURSO_AUTH_TOKEN = os.environ.get("TURSO_AUTH_TOKEN", "")
 
 # Determine if we should connect to Turso cloud or local SQLite
